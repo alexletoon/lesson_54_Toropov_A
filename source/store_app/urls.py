@@ -1,8 +1,8 @@
-from store_app import views
+from store_app.views.products import products_view
 from django.urls import path
 
 
 
 urlpatterns = [
-    path("", views.products_view)
+    path("", products_view)
 ]
