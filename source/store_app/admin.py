@@ -1,3 +1,24 @@
+
 from django.contrib import admin
 
-# Register your models here.
+from store_app.models import Goods, Categories
+
+
+class CategoriesAdmin(admin.ModelAdmin):
+    list_display = ['id', 'category', 'created_at', 'updated_at']
+    list_filter = ['id', 'category', 'created_at','updated_at']
+    search_fields = ['category', 'created_at', 'updated_at']
+    fields = ['category', 'created_at', 'updated_at']
+    readonly_fields = ['created_at', 'updated_at']
+
+class GoodsAdmin(admin.ModelAdmin):
+    list_display = ['id', 'good', 'price', 'created_at', 'updated_at']
+    list_filter = ['id', 'good', 'price', 'created_at','updated_at']
+    search_fields = ['good', 'price', 'created_at', 'updated_at']
+    fields = ['good', 'price', 'created_at', 'updated_at']
+    readonly_fields = ['created_at', 'updated_at']
+
+
+
+admin.site.register(Categories, CategoriesAdmin)
+admin.site.register(Goods, GoodsAdmin)
