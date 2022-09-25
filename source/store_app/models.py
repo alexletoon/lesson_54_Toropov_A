@@ -13,7 +13,7 @@ class Categories(models.Model):
 
 
 class Goods(models.Model):
-    category = models.ForeignKey(verbose_name='Категория', to='store_app.Category', null=False, blank=False, related_name='products', on_delete=models.RESTRICT)
+    category = models.ForeignKey(verbose_name='Категория', to='store_app.Categories', null=False, blank=False, related_name='products', on_delete=models.RESTRICT)
     good = models.CharField(verbose_name='Название продукта', max_length=200, null=False, blank=False)
     description = models.TextField(verbose_name='Описание продукта', max_length=3000, null=True, blank=True)
     created_at = models.DateTimeField(verbose_name='Дата добавления', auto_now_add=True)
