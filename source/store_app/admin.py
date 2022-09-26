@@ -12,10 +12,10 @@ class CategoriesAdmin(admin.ModelAdmin):
     readonly_fields = ['created_at', 'updated_at']
 
 class GoodsAdmin(admin.ModelAdmin):
-    list_display = ['id', 'good', 'price', 'created_at', 'updated_at']
-    list_filter = ['id', 'good', 'price', 'created_at','updated_at']
-    search_fields = ['good', 'price', 'created_at', 'updated_at']
-    fields = ['good', 'price', 'created_at', 'updated_at']
+    list_display = ['id', 'category', 'good', 'price', 'created_at', 'updated_at']
+    list_filter = ['id', 'good', 'category', 'price', 'created_at','updated_at']
+    search_fields = ['good', 'price', 'category', 'created_at', 'updated_at']
+    fields = ['good', 'price', 'category', 'created_at', 'updated_at', 'pic']
     readonly_fields = ['created_at', 'updated_at']
 
 
