@@ -5,4 +5,13 @@
 .portfolio{
     margin-top: 40px;
 }
-
+.pic_container{
+    height: 100px;
+    max-width: 200px;
+}
+.text_box{
+    display: inline-block;
+}
+.body{
+    padding-top: 50px;
+}
