@@ -22,7 +22,7 @@
                 <div class="navbar-nav">
                   <a class="nav-link" aria-current="page" href="{% url 'index_view' %}">Products</a>
                   <a class="nav-link" href="{% url 'add_product' %}">Add products</a>
-                  <a class="nav-link" href="#">Add category</a>
+                  <a class="nav-link" href="{% url 'add_category' %}">Add category</a>
                   {% block menu %}{% endblock %}
                 </div>
               </div>

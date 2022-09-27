@@ -1,5 +1,3 @@
-import re
-from unicodedata import category
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from store_app.models import Categories, Goods
 
