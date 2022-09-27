@@ -4,20 +4,24 @@
 {% block menu %}{% endblock %}
 {% block content %}
 <div class="portfolio">
-  <div class="row">
-      {% for good in goods %}
-      <div class="col">
-          <div class="card" style="width: 18rem;">
-              <img src="{{good.pic}}" class="card-img-top" alt="good_pic">
-              <div class="card-body">
-                <h5 class="card-title">{{good.good}}</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="product/{{good.id}}" class="btn btn-primary">Подробнее</a>
-              </div>
-            </div>
+  {% for good in goods %}
+  <div class="card mb-3" style="max-width: 900px;">
+    <div class="row">
+      <div class="col-lg-3">
+        <a href="product/{{good.id}}">
+          <img src="{{good.pic}}" class="img-fluid rounded-start" alt="product_pic">
+        </a>
       </div>
-      {% endfor %}
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{good.good}}</h5>
+          <p class="card-text">{{good.description}}</p>
+          <a href="product/{{good.id}}" class="btn btn-primary">Подробнее</a>
+        </div>
+      </div>
+    </div>
   </div>
+  {% endfor %}
 </div>
 {% endblock %}
 
