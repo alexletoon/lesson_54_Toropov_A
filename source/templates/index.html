@@ -5,7 +5,7 @@
 {% block content %}
 <div class="portfolio">
   {% for good in goods %}
-  <div class="card mb-3" style="max-width: 900px;">
+  <div class="card mb-3" style="max-width: 540px;">
     <div class="row">
       <div class="col-lg-3">
         <a href="product/{{good.id}}">
@@ -15,7 +15,11 @@
       <div class="col-md-8">
         <div class="card-body">
           <h5 class="card-title">{{good.good}}</h5>
-          <p class="card-text">{{good.description}}</p>
+          {% if good.description == None %}
+            <p class="card-text">Описание отсутствует</p>
+          {% else %}
+            <p class="card-text">{{good.description}}</p>
+          {%endif%}
           <a href="product/{{good.id}}" class="btn btn-primary">Подробнее</a>
         </div>
       </div>

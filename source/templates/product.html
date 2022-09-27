@@ -14,10 +14,12 @@
                 <div class="card-body">
                     <h4>Наименование:</h3>
                     <p>{{good.good}}</p>
-                    <h4>Категория:</h3>
-                    <p>{{good.category}}</p>
                     <h4>Описание:</h3>
+                    {% if good.description == None %}
+                    <p>Описание отсутствует</p>
+                    {% else %}
                     <p>{{good.description}}</p>
+                    {%endif%}
                     <h4>Цена:</h3>
                     <p>{{good.price}} KZT</p>
                 </div>
