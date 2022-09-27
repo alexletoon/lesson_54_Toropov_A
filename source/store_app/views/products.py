@@ -22,7 +22,6 @@ def display_product(request, pk):
 
 def product_add_view(request):
     if request.method == 'GET':
-        print('Method - GET')
         categories = Categories.objects.all()
         context = {
             'categories': categories
@@ -36,10 +35,7 @@ def product_add_view(request):
             'pic': request.POST.get('pic'),
             'description': request.POST.get('description'),
         }
-        print(request.POST.get('id'))
-        print('Method - POST')
-        # Goods.objects.create(**product_info)
         category = Categories()
         category.id = request.POST.get('category')
-        Goods.objects.create(good = product_info['good'], category=category, price = product_info['price'], pic = product_info['pic'], description = product_info['description'])
-        return redirect(reverse('index_view'))
+        good = Goods.objects.create(good = product_info['good'], category=category, price = product_info['price'], pic = product_info['pic'], description = product_info['description'])
+        return redirect(reverse('product_view', kwargs={'pk': good.id}))
